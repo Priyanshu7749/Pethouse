@@ -28,7 +28,7 @@
 }
 
 .logo img {
-    height: 80px;
+    /* height: 80px; */
     width: auto;
 }
 
@@ -41,7 +41,13 @@
 .scrolled .mainpage-logo {
     height: 50px;
 }
-
+.header nav ul li a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
 .nav-content {
     display: flex;
     align-items: center;

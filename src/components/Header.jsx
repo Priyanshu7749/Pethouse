@@ -43,10 +43,10 @@ export default function Header() {
 
                     <div className={`nav-content ${isMenuOpen ? 'open' : ''}`}>
                         <ul className="nav-links">
-                            <li><a href="#" className="nav-link">Home</a></li>
-                            <li><a href="#" className="nav-link">Adopt now</a></li>
-                            <li><a href="#" className="nav-link">About Us</a></li>
-                            <li><a href="#" className="nav-link">Community</a></li>
+                            <li><Link to='/'><a className="nav-link">Home</a></Link></li>
+                            <li><Link to='/adoptionsearch'><a  className="nav-link">Adopt now</a></Link></li>
+                            <li><Link to='/aboutus'><a className="nav-link">About Us</a></Link></li>
+                            <li><Link to='/community'><a className="nav-link">Community</a></Link></li>
                         </ul>
 
                         <div className="nav-buttons">

@@ -1,0 +1,156 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.header.scrolled {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+}
+
+.nav-container {
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+.mainpage-logo {
+    height: 60px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+.scrolled .mainpage-logo {
+    height: 50px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    margin-left: 230px;
+}
+
+.nav-link {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2d3748;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-button,
+.login-button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-button {
+    background-color: #f472b6;
+    color: white;
+}
+
+.login-button {
+    background-color: #EA7B73;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #4a5568;
+    z-index: 20;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        visibility: hidden;
+    }
+
+    .nav-content.open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 10px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-content {
+        display: flex !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainpage-logo {
+        height: 50px;
+    }
+}

@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Star, Search, Calendar, Home, Globe, Globe2, MessageCircle, ShoppingCart,Menu, X } from 'lucide-react';
+import React from 'react';
+import { Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Header from './Header';
+import FaqSection from './FaqSection';
 import './MainPage.css';
-import logo from "../assets/images/logos/logo.png"
+
+// Import images
 import dog1 from "../assets/images/mainpage/dog1.svg";
 import dog2 from "../assets/images/mainpage/dog2.png";
 import m1 from "../assets/images/mainpage/m1.png";
@@ -18,67 +22,12 @@ import ad2 from "../assets/images/mainpage/ad2.svg";
 import ad3 from "../assets/images/mainpage/ad3.svg";
 import ad4 from "../assets/images/mainpage/ad4.svg";
 import ad5 from "../assets/images/mainpage/ad5.svg";
-import { Link } from 'react-router-dom';
-import FaqSection from './FaqSection';
-function MainPage() {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
-
+export default function MainPage() {
     return (
         <>
-
+            <Header />
             <div className="pet-adoption-page">
-                <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-                    <nav className="nav-container">
-                        <div className="container">
-                            <div className="logo">
-                                <img src={logo} alt="PetHouse Logo" className="mainpage-logo" />
-                            </div>
-
-                            <button
-                                className="menu-toggle"
-                                onClick={toggleMenu}
-                                aria-expanded={isMenuOpen}
-                                aria-label="Toggle navigation menu"
-                            >
-                                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                            </button>
-
-                            <div className={`nav-content ${isMenuOpen ? 'open' : ''}`}>
-                                <ul className="nav-links">
-                                    <li><a href="#" className="nav-link">Home</a></li>
-                                    <li><a href="#" className="nav-link">Adopt now</a></li>
-                                    <li><a href="#" className="nav-link">About Us</a></li>
-                                    <li><a href="#" className="nav-link">Community</a></li>
-                                </ul>
-
-                                <div className="nav-buttons">
-                                    <button className="contact-button">Contact us</button>
-                                    <Link to="/login">
-                                        <button className="login-button">Login/Signup</button>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </header>
-
                 <main className="container2">
                     <div className="content-left">
                         <h1>
@@ -99,49 +48,18 @@ function MainPage() {
                             </div>
                             <p>Our happy pet owners</p>
                             <div className="owner-avatars">
-                                <img
-                                    src={m1}
-                                    alt="Happy pet owner 1"
-                                    width="40"
-                                    height="40"
-                                />
-                                <img
-                                    src={m2}
-                                    alt="Happy pet owner 2"
-                                    width="40"
-                                    height="40"
-                                />
-                                <img
-                                    src={m3}
-                                    alt="Happy pet owner 3"
-                                    width="40"
-                                    height="40"
-                                />
-                                <img
-                                    src={m4}
-                                    alt="Happy pet owner 4"
-                                    width="40"
-                                    height="40"
-                                />
-                                <img
-                                    src={m5}
-                                    alt="Happy pet owner 5"
-                                    width="40"
-                                    height="40"
-                                />
+                                <img src={m1} alt="Happy pet owner 1" width="40" height="40" />
+                                <img src={m2} alt="Happy pet owner 2" width="40" height="40" />
+                                <img src={m3} alt="Happy pet owner 3" width="40" height="40" />
+                                <img src={m4} alt="Happy pet owner 4" width="40" height="40" />
+                                <img src={m5} alt="Happy pet owner 5" width="40" height="40" />
                             </div>
                         </div>
                     </div>
 
                     <div className="content-right">
                         <div className="main-image">
-                            <img
-                                src={dog1}
-                                alt="Happy dog"
-                                width="300"
-                                height="400"
-                                className='main-image1'
-                            />
+                            <img src={dog1} alt="Happy dog" width="300" height="400" className='main-image1' />
                             <div className="stat adopted">
                                 <p>1200+ Adopted</p>
                             </div>
@@ -154,17 +72,12 @@ function MainPage() {
                             </div>
                         </div>
                         <div className="secondary-image">
-                            <img
-                                src={dog2}
-                                alt="Another cute dog"
-                                width="200"
-                                height="275"
-                            />
+                            <img src={dog2} alt="Another cute dog" width="200" height="275" />
                         </div>
                     </div>
                 </main>
             </div>
-            {/* Adoption journey section */}
+            
             <div className="adoption-journey">
                 <h2 className="journey-title">
                     <span>Your pet adoption journey</span>
@@ -181,7 +94,8 @@ function MainPage() {
                                 <div className="search-input">
                                     <input type="text" placeholder="Search Pet" />
                                     <button className="globe-button">
-                                        <Globe size={20} />
+                                        <span className="sr-only">Search</span>
+                                        🌐
                                     </button>
                                 </div>
                                 <p className='p2'>Adopt a dog or cat who's right for you. Simply enter your city above to start your search.</p>
@@ -198,71 +112,50 @@ function MainPage() {
                             <div className="step-number3">3</div>
                             <div className="step-content">
                                 <img src={web} alt='web' />
-                                <p className='p2'>(Website Name) will help your pet to settle down in its new home, once you complete the Adoption journey</p>
+                                <p className='p2'>PetHouse will help your pet to settle down in its new home, once you complete the Adoption journey</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button className="adopt-now-button">Adopt Now</button>
             </div>
-            {/* How it works section */}
+            
             <div className="pet-adoption">
                 <div className="how-it-works">
                     <h2>How it Works?</h2>
                     <div className="works">
                         <div className="work">
-                            <Search size={24} />
+                            <span className="icon">🔍</span>
                             <h3>Search</h3>
                             <p>Simply enter your city start your search</p>
                         </div>
                         <div className="work">
-                            <MessageCircle size={24} />
+                            <span className="icon">💬</span>
                             <h3>Meet</h3>
                             <p>Schedule your appointment to meet the pet you love</p>
                         </div>
                         <div className="work">
-                            <ShoppingCart size={24} />
+                            <span className="icon">🛒</span>
                             <h3>Adopt</h3>
                             <p>Finally adopt the dog or cat you love</p>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* Gallery section */}
+            
             <div className="adoption-gallery">
                 <h1>Gallery</h1>
                 <div className="image-grid">
-                    <img
-                        src={ad1}
-                        alt="Person with a dog"
-                        className="image image-1"
-                    />
-                    <img
-                        src={ad2}
-                        alt="Person with a cat"
-                        className="image image-2"
-                    />
-                    <img
-                        src={ad3}
-                        alt="Hand petting a cat"
-                        className="image image-3"
-                    />
-                    <img
-                        src={ad4}
-                        alt="Person with a dog outdoors"
-                        className="image image-4"
-                    />
-                    <img
-                        src={ad5}
-                        alt="Person holding a pet"
-                        className="image image-5"
-                    />
+                    <img src={ad1} alt="Person with a dog" className="image image-1" />
+                    <img src={ad2} alt="Person with a cat" className="image image-2" />
+                    <img src={ad3} alt="Hand petting a cat" className="image image-3" />
+                    <img src={ad4} alt="Person with a dog outdoors" className="image image-4" />
+                    <img src={ad5} alt="Person holding a pet" className="image image-5" />
                 </div>
                 <h2 className="adopt-me-heading">#Adopt Me</h2>
             </div>
+            
             <FaqSection />
         </>
     );
 }
-
-export default MainPage;

@@ -93,16 +93,19 @@ const FaqSection = () => {
             <li><a href="#">Terms & Conditions</a></li>
           </ul>
         </div>
-      </footer>
-      <footer className="footer-container">
-        <div className="footer-content">
-          <div className="copyright">
-            © Copyright, India
-          </div>
-          <div className="address">
-            <p className='fp1'>Pethouse Animal Store 3rd Floor, Bharat Towers Plot No. 45, Sector 21,</p>
-            <p>Ahmedabad, Gujarat - 380001</p>
-            <p>India</p>
+        <div className='footer-section'>
+          <div className="footer-content">
+            <div className="line-container">
+              <span className="line"></span>
+            </div>
+            <div className="copyright">
+              © Copyright, India
+            </div>
+            <div className="address">
+              <p className='fp1'>Pethouse Animal Store 3rd Floor, Bharat Towers Plot No. 45, Sector 21,</p>
+              <p>Ahmedabad, Gujarat - 380001</p>
+              <p>India</p>
+            </div>
           </div>
         </div>
       </footer>

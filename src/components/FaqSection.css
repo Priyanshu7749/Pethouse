@@ -135,22 +135,35 @@
   text-align: center;
   color: white;
   font-weight: bold;
+  margin-top: 50px;
 }
 
 .copyright {
   font-size: 14px;
   margin-bottom: 10px;
-  margin-right: 88%;
+  /* margin-right: 88%; */
 }
 
 .address {
   font-size: 14px;
   line-height: 1.5;
   margin-top: -45px;
+  margin-left: 1050px;
+  width: 220%;
+}
+.line-container {
+  position: relative;
+  width: 100px; /* adjust to your desired width */
+  height: 20px; /* adjust to your desired height */
 }
 
-.address p {
-  margin: 0;
+.line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1100%; /* adjust to your desired line thickness */
+  height: 10%; /* adjust to your desired line height */
+  background-color: white; /* adjust to your desired line color */
 }
 
 
@@ -166,8 +179,21 @@
     margin-left: 25%;
   }
   .copyright{
-    margin-bottom: 50px;
-    margin-left: 85%;
+    margin-top: 200px;
+    /* margin-left: 85%; */
     width: 100%;
+    margin-left: -120%;
+  }
+  .address{
+    margin-left: -120%;
+    width: 100%;
+    margin-top: 0px;
+
+  }
+  .line{
+    width: 400%;
+    margin-top: 200px;
+    /* margin-left: -20%; */
+    margin-left: -270%;
   }
 }

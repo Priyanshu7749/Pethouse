@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/images/logos/logo.png';
 import dog from '../assets/images/adoptionsearch/dog.svg';
 import './AdoptionSearch.css'
+import Footer from './Footer';
 
 export default function AdoptionSearch() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -45,7 +46,7 @@ export default function AdoptionSearch() {
 
                         <div className={`nav-content ${isMenuOpen ? 'open' : ''}`}>
                             <ul className="nav-links">
-                                <li><Link to='/'><a  className="nav-link">Home</a></Link></li>
+                                <li><Link to='/'><a className="nav-link">Home</a></Link></li>
                                 <li><Link to='/adoptionsearch'><a className="nav-link">Adopt now</a></Link></li>
                                 <li><Link to='/aboutus'><a className="nav-link">About Us</a></Link></li>
                                 <li><Link to='/community'><a className="nav-link">Community</a></Link></li>
@@ -71,8 +72,8 @@ export default function AdoptionSearch() {
                     </div>
                     <h2>Where would you like to search?</h2>
                     <div className='input-container'>
-                    <input type="text" placeholder="Enter city, State, or ZIP" />
-                    <input type="text" placeholder="Distance" />
+                        <input type="text" placeholder="Enter city, State, or ZIP" />
+                        <input type="text" placeholder="Distance" />
                     </div>
                     <button>Continue</button>
                 </div>
@@ -81,6 +82,9 @@ export default function AdoptionSearch() {
                     Pet Available for Adoption Nearby
                     <span className="heart">♥</span>
                 </div>
+            </div>
+            <div className='asfooter'>
+                <Footer />
             </div>
         </>
     )

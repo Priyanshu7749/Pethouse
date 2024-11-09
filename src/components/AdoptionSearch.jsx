@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/images/logos/logo.png';
-import dog from '../assets/images/adoptionsearch/dog.svg';
-import './AdoptionSearch.css'
-import Footer from './Footer';
+import React, { useState, useEffect } from 'react'; 
+import { Menu, X } from 'lucide-react'; 
+import { Link } from 'react-router-dom'; 
+import logo from '../assets/images/logos/logo.png'; 
+import dog from '../assets/images/adoptionsearch/dog.svg'; 
+import './AdoptionSearch.css' 
+import Footer from './Footer'; 
+import dog1 from '../assets/images/adoptionsearch/dog1.svg'; 
+import dog2 from '../assets/images/adoptionsearch/dog2.svg'; 
+import dog3 from '../assets/images/adoptionsearch/dog3.svg'; 
+import dog4 from '../assets/images/adoptionsearch/dog4.svg'
 
 export default function AdoptionSearch() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,9 +29,18 @@ export default function AdoptionSearch() {
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    const pets = [
+        { id: 1, name: "Tiger", image: dog1 },
+        { id: 2, name: "Tiger", image: dog2 },
+        { id: 3, name: "Tiger", image: dog3 },
+        { id: 4, name: "Tiger", image: dog4, details: "puppy" },
+        { id: 5, name: "Tiger", image: dog2, details: "7 miles away" },
+        { id: 6, name: "Tiger", image: dog1, details: "7 miles away" },
+    ];
 
     return (
         <>
+            {/* Adoption-search header  */}
             <header className={`asheader ${isScrolled ? 'scrolled' : ''}`}>
                 <nav className="nav-container">
                     <div className="container">
@@ -62,6 +75,7 @@ export default function AdoptionSearch() {
                     </div>
                 </nav>
             </header>
+            {/* search section  */}
             <div className="adoption-search">
                 <div className="hero">
                     <h1>Adopt a Stray!</h1>
@@ -83,6 +97,29 @@ export default function AdoptionSearch() {
                     <span className="heart">♥</span>
                 </div>
             </div>
+            {/* pet-avaliable section  */}
+            <div className="pet_avaliable-container">
+                <h1 className="title">Pet Available for Adoption Nearby</h1>
+                <div className="pet-grid">
+                    {pets.map((pet) => (
+                        <div key={pet.id} className="pet-card">
+                            <div className="image-container">
+                                <img src={pet.image} alt={pet.name} className="aspet-image" />
+                                <button className="like-button" aria-label="Like">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="heart-icon">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className="pet-info">
+                                <h2 className="pet-name">{pet.name}</h2>
+                                {pet.details && <p className="pet-details">{pet.details}</p>}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            {/* footer section  */}
             <div className='asfooter'>
                 <Footer />
             </div>

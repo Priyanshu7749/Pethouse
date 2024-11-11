@@ -101,7 +101,7 @@ const Aboutus = () => {
                     </div>
                 </nav>
             </header>
-            {/* Who we are  */}
+            {/* hero section  */}
             <div className="wwah-hero">
                 <div className="wwah-hero-overlay"></div>
                 <div className="wwah-content">

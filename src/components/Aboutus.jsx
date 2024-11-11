@@ -199,9 +199,6 @@ const Aboutus = () => {
                     ))}
                 </div>
             </div>
-
-
-
             {/* footer section  */}
             <div className='asfooter'>
                 <Footer />

@@ -1,0 +1,399 @@
+.wwa-container {
+    min-height: 100vh;
+  }
+  
+  .wwa-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 50;
+  }
+  
+  .wwa-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .wwa-logo-link {
+    display: flex;
+    align-items: center;
+  }
+  
+  .wwa-logo {
+    width: auto;
+    height: 2rem;
+  }
+  
+  .wwa-nav {
+    display: none;
+  }
+  
+  .wwa-nav-link {
+    margin-left: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1a202c;
+    text-decoration: none;
+  }
+  
+  .wwa-nav-link:hover {
+    color: #4a5568;
+  }
+  
+  .wwa-contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    background-color: #ff6b5b;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .wwa-contact-button:hover {
+    background-color: #ff6b5be6;
+  }
+  
+  .wwa-hero {
+    position: relative;
+    padding-top: 4rem;
+  }
+  .wwah-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .wwah-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/adoptionsearch/background.svg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .wwah-hero-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .wwah-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .wwah-title {
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .wwah-title {
+      font-size: 2.5rem;
+    }
+    
+  }
+  
+  @media (max-width: 480px) {
+    .wwah-title {
+      font-size: 2rem;
+    }
+  }
+  
+  .wwa-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/adoptionsearch/background.svg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .wwa-hero-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .wwa-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0rem 1rem;
+  }
+
+  .wwa-content-grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  
+  .wwa-text-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .wwa-section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .wwa-paragraph {
+    margin-bottom: 1rem;
+  }
+  
+  .wwa-image-container {
+    position: relative;
+  }
+  
+  .wwa-main-image {
+    width: 100%;
+    height: 400px;
+    margin-left: 45px;
+    border-radius: 0.5rem;
+  }
+  
+  .wwa-stat-box {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    background-color: #ff6b5b;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    color: white;
+  }
+  
+  .wwa-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  .wwa-stat-text {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+  }
+  
+  .cfp-container {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+  }
+  
+  .cfp-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  .cfp-image-container {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    overflow: hidden;
+  }
+  
+  .cfp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .cfp-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cfp-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin: 0;
+    text-align: left;
+  }
+  
+  .cfp-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .cfp-description p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin: 0;
+  }
+  
+  @media (min-width: 768px) {
+    .cfp-content {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .cfp-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cfp-container {
+      padding: 1rem 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .wwa-nav {
+      display: flex;
+      align-items: center;
+    }
+  
+
+    .wwa-content-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+  @media (max-width: 768px) {
+    .wwa-main-image{
+        margin-left: 0px;
+        margin-bottom: 40px;
+    }
+  }
+
+
+/* why pethouse  */
+.wph-container {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .wph-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 3rem;
+  }
+  
+  .wph-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .wph-service-card {
+    background: #F6F5F5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .wph-service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .wph-service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6b5b;
+  }
+  
+  .wph-service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1rem;
+  }
+  
+  .wph-service-description {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .wph-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 6rem;
+    padding-top: 2rem;
+    /* box-shadow: 0 8px 6px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    /* border-top: 1px solid #e2e8f0; */
+  }
+  
+  .wph-stat-item {
+    text-align: center;
+  }
+  
+  .wph-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff6b5b;
+    margin-bottom: 0.5rem;
+  }
+  
+  .wph-stat-label {
+    color: #4a5568;
+    font-size: 1rem;
+    text-transform: capitalize;
+    margin-top: -17px;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .wph-container {
+      padding: 3rem 1rem;
+    }
+  
+    .wph-services {
+      grid-template-columns: 1fr;
+    }
+  
+    .wph-stats {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      border-radius: 8px;
+    }
+  
+    .wph-title {
+      font-size: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  }

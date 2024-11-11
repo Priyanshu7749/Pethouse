@@ -37,7 +37,7 @@ const Footer = () => {
       </div>
       <div className="footer-section">
         <h2 className='partner'>Partner</h2>
-        <ul>
+        <ul className='partner-ul'>
           <li><a href="#">Become a Groomer</a></li>
           <li><a href="#">Become a Trainer</a></li>
           <li><a href="#">Become a Dog Walker</a></li>

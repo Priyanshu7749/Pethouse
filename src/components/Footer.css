@@ -110,13 +110,22 @@
       grid-template-columns: 1fr;
     }
     .follow-us{
-        margin-left: -50%;
+        margin-left: 50%;
+        margin-top: -25%;
+        /* width: 100%; */
+    }
+    .social-icons-faq{
+      margin-left: 50%;
     }
     .website-name{
         margin-left: -80%;
     }
     .partner{
-        margin-left: -88%;
+        margin-left: 35%;
+        margin-top: -55%;
+    }
+    .partner-ul{
+      margin-left: 58%;
     }
     .policy{
         margin-left: -90%;
@@ -134,7 +143,7 @@
     }
   
     .line {
-      width: 399%;
+      width: 390%;
       /* margin-top: 200px; */
       margin-left: -150%;
     }

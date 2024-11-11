@@ -110,12 +110,12 @@
       grid-template-columns: 1fr;
     }
     .follow-us{
-        margin-left: 50%;
+        margin-left: 5%;
         margin-top: -25%;
-        /* width: 100%; */
+        width: 100%;
     }
     .social-icons-faq{
-      margin-left: 50%;
+      margin-left: 45%;
     }
     .website-name{
         margin-left: -80%;

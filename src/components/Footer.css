@@ -3,7 +3,7 @@
     padding: 40px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 0px;
     margin-top: 100px; 
     /* margin-bottom: 2px; */
   }
@@ -79,6 +79,7 @@
   
   .copyright {
     font-size: 14px;
+    margin-left: -30%;
     margin-bottom: 10px;
   }
   
@@ -86,7 +87,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin-top: -45px;
-    margin-left: 1050px;
+    margin-left: 1000px;
     width: 220%;
   }
   
@@ -102,6 +103,7 @@
     left: 0;
     width: 1100%;
     height: 10%;
+    margin-left: -55%;
     background-color: white;
   }
   

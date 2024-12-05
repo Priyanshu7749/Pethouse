@@ -79,22 +79,24 @@
   
   .copyright {
     font-size: 14px;
-    margin-left: -30%;
+    margin-left: -1010%;
+    margin-top: 100%;
     margin-bottom: 10px;
   }
   
   .address {
     font-size: 14px;
     line-height: 1.5;
-    margin-top: -45px;
-    margin-left: 1000px;
-    width: 220%;
+    margin-top: -20%;
+    margin-left: -500%;
+    width: 250%
   }
   
   .line-container {
     position: relative;
-    width: 100px;
+    width: 110px;
     height: 20px;
+    margin-left: -875%;
   }
   
   .line {
@@ -103,7 +105,9 @@
     left: 0;
     width: 1100%;
     height: 10%;
-    margin-left: -55%;
+    /* margin-left: 55%; */
+    margin-left: -150%;
+    margin-top: 170%;
     background-color: white;
   }
   

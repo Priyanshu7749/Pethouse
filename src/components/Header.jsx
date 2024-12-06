@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Menu, X, LogOut } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 import logo from "../assets/images/logos/logo.png";
+import DefaultAvatar from './DefalutAvater';
 import './Header.css';
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isCommunityHovered, setIsCommunityHovered] = useState(false);
+    const [user, setUser] = useState(null);
+    const [isProfileOpen, setIsProfileOpen] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,8 +27,29 @@ export default function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const toggleProfile = () => {
+        setIsProfileOpen(!isProfileOpen);
+    };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            navigate('/');
+        } catch (error) {
+            console.error('Error signing out: ', error);
+        }
     };
 
     return (
@@ -43,17 +71,48 @@ export default function Header() {
 
                     <div className={`nav-content ${isMenuOpen ? 'open' : ''}`}>
                         <ul className="nav-links">
-                            <li><Link to='/'><a className="nav-link">Home</a></Link></li>
-                            <li><Link to='/adoptionsearch'><a  className="nav-link">Adopt now</a></Link></li>
-                            <li><Link to='/aboutus'><a className="nav-link">About Us</a></Link></li>
-                            <li><Link to='/community'><a className="nav-link">Community</a></Link></li>
+                            <li><Link to='/' className="nav-link">Home</Link></li>
+                            <li><Link to='/adoptionsearch' className="nav-link">Adopt now</Link></li>
+                            <li><Link to='/aboutus' className="nav-link">About Us</Link></li>
+                            <li 
+                                className="nav-item-with-subtext"
+                                onMouseEnter={() => setIsCommunityHovered(true)}
+                                onMouseLeave={() => setIsCommunityHovered(false)}
+                            >
+                                <Link className="nav-link">Community</Link>
+                                <div className={`subtext-container ${isCommunityHovered ? 'visible' : ''}`}>
+                                    <Link to='/volunteer' className="subtext-link">Become Volunteer</Link>
+                                    <Link to='/community/donor' className="subtext-link">Be the Pet Donor</Link>
+                                </div>
+                            </li>
                         </ul>
 
                         <div className="nav-buttons">
-                            <button className="contact-button">Contact us</button>
-                            <Link to="/login">
-                                <button className="login-button">Login/Signup</button>
-                            </Link>
+                            {/* <button className="contact-button">Contact us</button> */}
+                            {user ? (
+                                <div className="user-profile">
+                                    <button className="profile-button" onClick={toggleProfile} aria-label="Toggle profile menu">
+                                        <img 
+                                            src={user.photoURL || DefaultAvatar} 
+                                            alt="User profile" 
+                                            className="user-avatar"
+                                        />
+                                    </button>
+                                    {isProfileOpen && (
+                                        <div className="profile-dropdown">
+                                            <Link to="/profile" className="profile-link">View Profile</Link>
+                                            <button className="logout-button" onClick={handleLogout}>
+                                                <LogOut size={18} />
+                                                <span>Logout</span>
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <Link to="/login">
+                                    <button className="login-button">Login/Signup</button>
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -61,3 +120,4 @@ export default function Header() {
         </header>
     );
 }
+

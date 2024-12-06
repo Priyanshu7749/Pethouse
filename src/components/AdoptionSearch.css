@@ -6,7 +6,7 @@
     z-index: 1000;
     background-color: white;
     transition: all 0.3s ease;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .asheader.scrolled {

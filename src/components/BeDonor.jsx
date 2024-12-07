@@ -3,6 +3,8 @@ import './BeDonor.css';
 import Header from './Header';
 import dog3 from '../assets/images/mainpage/dog3.png'
 import Footer from './Footer';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const BeDonor = () => {
     const [formData, setFormData] = useState({
@@ -77,17 +79,23 @@ const BeDonor = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validateForm()) {
-            // Form is valid, you can submit the data here
-            console.log('Form submitted:', formData);
+          try {
+            const docRef = await addDoc(collection(db, "adoptionApplications"), formData);
+            console.log("Document written with ID: ", docRef.id);
+            alert("Form submitted successfully!");
             // Reset form after submission if needed
             // setFormData({ ... }); // Reset to initial state
+          } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("An error occurred while submitting the form. Please try again.");
+          }
         } else {
-            console.log('Form has errors');
+          console.log('Form has errors');
         }
-    };
+      };
 
     return (
         <>

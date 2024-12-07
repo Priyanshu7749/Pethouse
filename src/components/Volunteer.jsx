@@ -6,7 +6,8 @@ import logo from '../assets/images/logos/logo.png';
 import './Volunteer.css';
 import DefaultAvatar from './DefalutAvater';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const Volunteer = () => {
     const [formData, setFormData] = useState({
@@ -63,8 +64,6 @@ const Volunteer = () => {
         }
     };
 
-
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -73,11 +72,28 @@ const Volunteer = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        // Handle form submission here
+        try {
+            const docRef = await addDoc(collection(db, "volunteerApplications"), formData);
+            console.log("Document written with ID: ", docRef.id);
+            alert("Your application has been submitted successfully!");
+            setFormData({
+                email: '',
+                firstName: '',
+                lastName: '',
+                city: '',
+                goals: '',
+                desiredSkills: '',
+                pastExperience: '',
+                previousVolunteering: ''
+            });
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("There was an error submitting your application. Please try again.");
+        }
     };
+
     return (
         <>
             <div className='volunteer'>
@@ -108,7 +124,7 @@ const Volunteer = () => {
                                         onMouseEnter={() => setIsCommunityHovered(true)}
                                         onMouseLeave={() => setIsCommunityHovered(false)}
                                     >
-                                        <Link  className="nav-link">Community</Link>
+                                        <Link className="nav-link">Community</Link>
                                         <div className={`subtext-container ${isCommunityHovered ? 'visible' : ''}`}>
                                             <Link to='/volunteer' className="subtext-link">Become Volunteer</Link>
                                             <Link to='/bedonor' className="subtext-link">Pet Adopt</Link>
@@ -117,7 +133,6 @@ const Volunteer = () => {
                                 </ul>
 
                                 <div className="nav-buttons">
-                                    {/* <button className="contact-button">Contact us</button> */}
                                     {user ? (
                                         <div className="user-profile">
                                             <button className="profile-button" onClick={toggleProfile} aria-label="Toggle profile menu">
@@ -157,7 +172,6 @@ const Volunteer = () => {
                 </div>
 
                 {/* Become a volunteer section */}
-
                 <div className="vf-container">
                     <form className="vf-form" onSubmit={handleSubmit}>
                         <h1 className="vf-title">Volunteer application</h1>
@@ -287,3 +301,4 @@ const Volunteer = () => {
 }
 
 export default Volunteer
+

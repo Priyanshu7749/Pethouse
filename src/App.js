@@ -5,6 +5,7 @@ import MainPage from './components/MainPage';
 import AdoptionSearch from './components/AdoptionSearch';
 import Aboutus from './components/Aboutus';
 import Volunteer from './components/Volunteer';
+import BeDonor from './components/BeDonor';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/adoptionsearch' element={<AdoptionSearch/>}/>
         <Route path='/aboutus' element={<Aboutus/>}/>
         <Route path='/volunteer' element={<Volunteer/>}/>
+        <Route path='/bedonor' element={<BeDonor/>}/>
       </Routes>
     </Router>
   );

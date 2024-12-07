@@ -1,0 +1,109 @@
+.pet-adoption-hero {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    margin-top: 70px;
+  }
+  .bedonor{
+    background-color: #E2D1F9;
+  }
+  .pet-adoption-hero-image img {
+    max-width: 300px;
+  }
+  
+  .pet-adoption-hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .pet-adoption-hero-text h2 {
+    font-size: 2em;
+    color: #333;
+  }
+  
+  .pet-adoption-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .pet-adoption-form-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .pet-adoption-form-subtitle {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .pet-adoption-form-section {
+    margin-bottom: 30px;
+  }
+  
+  .pet-adoption-form-section h4 {
+    background-color: #ff9999;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  
+  .pet-adoption-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .pet-adoption-form input,
+  .pet-adoption-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .pet-adoption-form-full-width {
+    width: 100%;
+  }
+  
+  .pet-adoption-form-checkbox-group {
+    margin-bottom: 20px;
+  }
+  
+  .pet-adoption-form-checkbox-group label {
+    margin-right: 20px;
+  }
+  
+  .pet-adoption-form-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pet-adoption-form-table th,
+  .pet-adoption-form-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .pet-adoption-form-signature {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .pet-adoption-form-submit {
+    background-color: #ff9999;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+    

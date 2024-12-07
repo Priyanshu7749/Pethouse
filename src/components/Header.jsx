@@ -82,7 +82,7 @@ export default function Header() {
                                 <Link className="nav-link">Community</Link>
                                 <div className={`subtext-container ${isCommunityHovered ? 'visible' : ''}`}>
                                     <Link to='/volunteer' className="subtext-link">Become Volunteer</Link>
-                                    <Link to='/community/donor' className="subtext-link">Be the Pet Donor</Link>
+                                    <Link to='/bedonor' className="subtext-link">Pet Adopt</Link>
                                 </div>
                             </li>
                         </ul>
